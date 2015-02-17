@@ -111,11 +111,13 @@ class Board
   def generate_grid(rows, cols, value)
     active = 0
     @grid = {}
-    until active > value
+    while active < value
       row = (0..(rows-1)).to_a.sample
       col = (0..(cols-1)).to_a.sample
-      @grid[[row, col]] = 1
-      active += 1
+      unless @grid.has_key?([row, col])
+        @grid[[row, col]] = 1
+        active += 1
+      end
     end
   end
 end
