@@ -1,6 +1,7 @@
-require '~/Desktop/board.rb'
+require './board.rb'
 
 board = Board.new
+board.random_start
 board.print_grid
 
 while (c = gets.chomp)
